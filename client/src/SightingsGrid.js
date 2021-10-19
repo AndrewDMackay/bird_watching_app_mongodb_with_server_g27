@@ -1,3 +1,4 @@
+
 import SightingCard from "./SightingCard";
 const SightingsGrid = ({sightings, removeSighting}) => {
     const sightingsList = sightings.map((sighting) =>{

@@ -1,3 +1,4 @@
+
 import { deleteSighting } from "./SightingService"
 
 const SightingCard = ({sighting, removeSighting}) => {

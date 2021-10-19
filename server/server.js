@@ -2,10 +2,13 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 
 MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true })
@@ -13,7 +16,7 @@ MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true })
   const db = client.db('birds');
   const sightingsCollection = db.collection('sightings');
   const sightingsRouter = createRouter(sightingsCollection);
-  app.use('/api/birds', sightingsRouter);
+  app.use('/api/sightings', sightingsRouter);
 })
 .catch(console.error);
 

@@ -1,3 +1,4 @@
+
 const baseURL = 'http://localhost:5000/api/sightings/'
 
 export const getSightings = () => {
