@@ -1,3 +1,4 @@
+
 use birds;
 db.dropDatabase();
 
@@ -18,3 +19,4 @@ db.sightings.insertMany([
     date: "2018-08-15"
   }
 ]);
+
