@@ -11,9 +11,9 @@ app.use(express.json())
 MongoClient.connect('mongodb://localhost:27017', {useUnifiedTopology: true })
 .then((client) => {
   const db = client.db('birds');
-  const birdsCollection = db.collection('birds');
-  const birdsRouter = createRouter(birdsCollection);
-  app.use('/api/birds', birdsRouter);
+  const sightingsCollection = db.collection('sightings');
+  const sightingsRouter = createRouter(sightingsCollection);
+  app.use('/api/birds', sightingsRouter);
 })
 .catch(console.error);
 
